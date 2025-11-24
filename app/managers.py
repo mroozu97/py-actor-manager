@@ -30,7 +30,7 @@ class ActorManager:
 
     def update(self, pk: int, new_first_name: str,
                new_last_name: str) -> None:
-        query = f"""UPDATE {self.table_name} 
+        query = f"""UPDATE {self.table_name}
         SET first_name=?, last_name=? WHERE id=?"""
         self.cursor.execute(query, (new_first_name, new_last_name, pk))
         self.conn.commit()
